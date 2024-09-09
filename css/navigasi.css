@@ -1,0 +1,191 @@
+nav {
+    top: 0;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    padding: 15px 25px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.199);
+    background-color: white;
+    z-index: 100;
+}
+nav .overlay-for-mobile {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+nav .kampus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+}
+nav .kampus img {
+    width: 60px;
+    margin-right: 15px;
+}
+
+nav .page {
+    display: flex;
+    align-items: center;
+}
+nav .page a {
+    font-size: 20px;
+    transition: .2s;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: var(--font-dark);   
+}
+nav .page a.hal {
+    padding: 6px 12px;
+}
+nav .page a.hal:hover, nav .page a.hal.aktif {
+    color: var(--white);
+    background-color: var(--dark);
+}
+nav .login,
+nav .register,
+nav .logout {
+    display: flex;
+    padding: 4px 12px;
+    border-radius: 5px;
+    align-items: center;
+    background-color: white;
+    transition: .2s;
+}
+nav .login {
+    border: 3px solid var(--blue);
+    color: var(--blue);
+}
+nav .register {
+    border: 3px solid var(--coral);
+    color: var(--coral);
+}
+nav .logout {
+    border: 3px solid var(--red);
+    color: var(--red);
+}
+
+nav .login:hover {
+    background-color: var(--blue);
+    color: white;
+}
+nav .register:hover {
+    background-color: var(--coral);
+    color: white;
+}
+nav .logout:hover {
+    background-color: var(--red);
+    color: white;
+}
+nav .login span,
+nav .register span,
+nav .logout span {
+    margin-right: 5px;
+}
+nav .page img {
+    width: 30px;
+}
+
+
+nav .menu-mobile {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    margin: 5px 30px;
+}
+
+
+@media (max-width: 768px) {
+    nav .kampus { font-size: 11px; }
+    nav .kampus img { width: 40px; }
+    
+    nav .overlay-for-mobile .menu-mobile {
+        display: block;
+        background-image: url('../images/icon-menu.png');
+        cursor: pointer;
+    }
+    nav .overlay-for-mobile.aktif .menu-mobile {
+        background-image: url('../images/icon-close.png');
+    }
+
+    
+    nav {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.199);
+        height: 70px;
+    }
+    nav .overlay-for-mobile {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 70px;
+        display: flex;
+        position: fixed;
+        padding: 15px 25px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        z-index: 200;
+    }
+    
+    nav .page {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        min-width: fit-content;
+        max-width: 75%;
+        width: 300px;
+        padding: 90px 20px;
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.199);
+        transition: .8s ease;
+    }
+    nav .page > a{
+        font-size: 15px;
+        width: 90%;
+    }
+    .page >a>div {
+        margin: auto;
+        min-width: 150px;
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+    }
+    nav a[href='login.php'],
+    nav a[href='register.php'],
+    nav a[href='logout.php'] {
+        position: absolute;
+        bottom: 50px;
+    }
+    nav .login {
+        background-color: var(--blue);
+        color: white;
+    }
+    nav .register {
+        background-color: var(--coral);
+        color: white;
+    }
+    nav .logout {
+        background-color: var(--red);
+        color: white;
+    }
+    nav .page .hal {
+        margin-bottom: 10px;
+        border: 3px solid var(--dark);
+    }
+
+
+    nav .overlay-for-mobile.aktif ~ .page {
+        right: 0%;
+    }
+}

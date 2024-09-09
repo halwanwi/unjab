@@ -1,0 +1,262 @@
+body nav .register { display: none; }
+
+main {
+    /* width: 100vw; */
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
+}
+main .kontener {
+    margin: 20px;
+    position: relative;
+    width: 400px;
+    height: 380px;
+    cursor: pointer;
+    transition: .3s;
+}
+main .kontener .beasiswa {
+    width: 100%;
+    height: 90%;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 8px rgba(87, 87, 87, 0.363);
+    transform: translateY(10px);
+    transition: inherit;
+}
+/* main .kontener.akademik .beasiswa {
+    box-shadow: 0 0 5px var(--blue);
+}
+main .kontener.non-akademik .beasiswa {
+    box-shadow: 0 0 5px var(--red);
+} */
+main .kontener .beasiswa .icon {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+}
+main .kontener.akademik .beasiswa .icon {
+    background-image: url("../images/icon-beasiswa-akademik.png");
+}
+main .kontener.non-akademik .beasiswa .icon {
+    background-image: url("../images/icon-beasiswa-non-akademik.png");
+}
+
+
+
+
+main .kontener .beasiswa h3 {
+    margin-bottom: 8px;
+}
+main .kontener .alas {
+    width: 100%;
+    height: 96%;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+}
+main .kontener .alas svg {
+    width: 110%;
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    transition: .5s;
+}
+main .kontener.akademik .alas {
+    fill: var(--sky-blue);
+}
+main .kontener.non-akademik .alas {
+    fill: var(--red);
+}
+main .kontener  .beasiswa button {
+    position: absolute;
+    bottom: 30px;
+    padding: 8px 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 5px;
+    color: var(--white);
+    letter-spacing: 2px;
+    box-shadow: 0 0 8px rgba(0, 255, 64, 0.6);
+    /* border: 3px solid var(--green-soft); */
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+main .kontener:hover .alas svg {
+    width: 125%;
+}
+main .kontener:hover .beasiswa {
+    transform: translateY(0px);
+    background-color: var(--dark);
+    color: white;
+}
+main .kontener.akademik:hover .beasiswa .icon {
+    background-image: url('../images/icon-beasiswa-akademik-reverse.png');
+}
+main .kontener.non-akademik:hover .beasiswa .icon {
+    background-image: url('../images/icon-beasiswa-non-akademik-reverse.png');
+}
+
+
+
+
+form {
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -110%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 1s ease;
+}
+form.show {
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.404);
+}
+form .box {
+    background-color: white;
+    padding: 40px 60px;
+    width: 90%;
+    max-height: 90vh;
+    max-width: 600px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+form .box h2 {
+    font-size: 28px;
+}
+form .box .isian {
+    width: 100%;
+}
+form .box .isian >div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+form .box .isian input, form .box .isian select {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+input::placeholder {
+    font-style: italic;
+    opacity: .5;
+}
+
+form .box .isian .beasiswa span {
+    border-radius: 50px;
+    padding: 5px 15px;
+    border: 3px solid var(--font-dark);
+    width: fit-content;
+    margin: 5px auto 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+form .tombol button {
+    padding: 5px 18px;
+    margin: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+button.daftar {
+    background-color: var(--green);
+}
+button.batal {
+    background-color: var(--red);
+}
+
+form input:disabled {
+    background-color: var(--smooke);
+}
+
+
+/* membuat supaya tidak ada pilihan atas bawah di input type number */
+/* buat chrome */
+form input[type=number]::-webkit-outer-spin-button,
+form input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* buat firefox */
+form input[type=number] {
+    appearance: textfield;
+}
+
+
+
+
+
+
+/* PESAN BERHASIL PENGAJUAN BEASISWA */
+#pesan {
+    position: fixed;
+    z-index: 300;
+    opacity: 0;
+    right: 0; left: 0;
+    max-width: 500px;
+    width: 98%;
+    text-align: center;
+    margin: auto;
+    top: 80px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .8s;
+}
+#pesan.sukses {
+    background-color: var(--green-soft);
+    color: var(--green-dark);
+}
+#pesan.warning {
+    background-color: var(--orange);
+    color: var(--orange-dark);
+}
+
+#pesan.show {
+    opacity: .8;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    main { flex-direction: column; padding-top: 5rem; }
+    main .kontener { max-width: 90%; }
+}

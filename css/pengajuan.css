@@ -1,0 +1,59 @@
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+
+.ajuan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    width: 95%;
+}
+.ajuan.pending { box-shadow: 0 0 15px var(--golden); }
+.ajuan.terima { box-shadow: 0 0 15px var(--green-soft); }
+.ajuan.tolak { box-shadow: 0 0 15px var(--red-soft); }
+
+
+.ajuan .info {
+    margin: 30px;
+}
+.ajuan .info >div {
+    display: flex;
+    align-items: center;
+}
+.ajuan .info >div p.title {
+    min-width: fit-content;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.ajuan .info .berkas a {
+    text-decoration: none;
+    color: var(--sky);
+    font-style: italic;
+}
+.ajuan .info >div p.value {
+    padding: 5px 10px;
+}
+.ajuan .status button {
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+}
+.ajuan.ajuan.pending .status button { background-color: var(--orange); }
+.ajuan.ajuan.terima .status button { background-color: var(--green); }
+.ajuan.ajuan.tolak .status button { background-color: var(--red); }

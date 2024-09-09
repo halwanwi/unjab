@@ -1,0 +1,34 @@
+body nav .login {display: flex;}
+body nav .register { display: none; }
+
+
+
+body {
+    overflow-x: hidden;
+}
+form {
+    margin-top: 25px;
+}
+
+
+.sukses {
+    position: fixed;
+    z-index: 300;
+    opacity: 0;
+    right: 0; left: 0;
+    max-width: 500px;
+    width: 98%;
+    text-align: center;
+    margin: auto;
+    background-color: var(--green-soft);
+    color: var(--green-dark);
+    top: 80px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .8s;
+}
+.sukses.show {
+    opacity: .8;
+}
